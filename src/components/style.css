@@ -88,4 +88,22 @@ i {
     width:100%;
     display:inline-block;
 }
+.tableCats{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    justify-content: center;
+    border: 1px solid grey;
+}
 
+.oneCat{
+    border:1px solid grey;
+    background-color: white;
+    padding:15px;
+    flex-grow:1;
+}
+.orderNr{
+    border: 1px solid grey;
+    padding:40px;
+
+}

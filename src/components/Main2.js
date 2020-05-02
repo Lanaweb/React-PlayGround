@@ -2,6 +2,8 @@ import React from 'react';
 import Gallery from './Main2';
 import MusicVideo from './MusicVideo';
 import Tabs from './Tabs';
+import CatsInfo from './CatsInfo';
+
 
 class Main2 extends React.Component {
 
@@ -9,7 +11,8 @@ class Main2 extends React.Component {
         return <div>
             {/* <Gallary /> */}
             {/* <MusicVideo/> */}
-            <Tabs/>
+            {/* <Tabs/> */}
+            <CatsInfo/>
         </div>
     }
 }

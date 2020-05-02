@@ -15,6 +15,7 @@ function App() {
       {/* <Main arr={[1,5,6,7,4]}/> */}
       <Main2/>
       <Footer/>
+      
       {/* <CoupeButtons/>
       <Timer/>
       <LifeCicle /> */}
