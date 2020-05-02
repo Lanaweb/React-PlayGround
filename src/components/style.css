@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 h1{
     color:red;
 }
@@ -57,3 +60,32 @@ i {
     visibility: hidden;
 
 }
+.all{
+    width: 50%;
+    margin-left:20%
+}
+.tabs{
+    display: flex;
+    flex-direction: row;
+}
+.tabs > p{
+    border:1px solid grey;
+    background-color: white;
+    padding:5px;
+    width:100%;
+    display:inline-block;
+    margin: 0px;
+}
+.tabs > p.active {
+    /* background-color: green; */
+    border-bottom:0px;
+  }
+.content{
+    border-bottom:1px solid grey;
+    border-left:1px solid grey;
+    border-right:1px solid grey;
+    background-color: white;
+    width:100%;
+    display:inline-block;
+}
+
