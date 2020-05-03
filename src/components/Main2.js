@@ -3,6 +3,8 @@ import Gallery from './Main2';
 import MusicVideo from './MusicVideo';
 import Tabs from './Tabs';
 import CatsInfo from './CatsInfo';
+import Price from './Price';
+import LogInForm from './LogInForm';
 
 
 class Main2 extends React.Component {
@@ -12,7 +14,9 @@ class Main2 extends React.Component {
             {/* <Gallary /> */}
             {/* <MusicVideo/> */}
             {/* <Tabs/> */}
-            <CatsInfo/>
+            {/* <CatsInfo/> */}
+            {/* <Price value={100} currency="USD"/> */}
+            <LogInForm/>
         </div>
     }
 }
