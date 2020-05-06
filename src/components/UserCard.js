@@ -1,4 +1,5 @@
 import React from 'react';
+import Frame from './Frame';
 
 // class UserCard extends React.Component{
 
@@ -16,13 +17,17 @@ import React from 'react';
 // export default UserCard;
 
 
-function UserCard(props){ //functional component usualy used when there is no need in state
+function UserCard(props){ //functional component usually used when there is no need in state
 
     return(
         <div className="user-card">
-            <img src={props.img} alt="a cat" height="242" width="242"></img>
-            <p>{props.name}</p>
+            <Frame>
+                <img src={props.img} alt="a cat" height="242" width="242"></img>
+                <p>{props.name}</p>
+            </Frame>
+
         </div>
+        
     )
 
 }
