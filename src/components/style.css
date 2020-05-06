@@ -111,3 +111,11 @@ i {
     display: flex;
     flex-direction: column;
 }
+.user-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.user-card{
+    margin: 5px;;
+}

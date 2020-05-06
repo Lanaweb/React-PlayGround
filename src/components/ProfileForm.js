@@ -9,6 +9,7 @@ class ProfileForm extends React.Component{
         married:false,
         gender:"",
         birthday:"",
+        show:false,
     }
 
     handleFirstName=(e)=>{
@@ -31,8 +32,13 @@ class ProfileForm extends React.Component{
         this.setState({gender:e.target.value})
     }
 
+
+
+
+
+
     render(){
-        let {firstName,lastName,state,married,gender,birthday} =this.state
+        let {firstName,lastName,state,married,gender,birthday,} =this.state
 
         // let firstName=this.state.firstName;
         // let lastName=this.state.lastName;
@@ -41,6 +47,7 @@ class ProfileForm extends React.Component{
         // let birthday=this.state.birthday; 
 
         return(
+            <>
             <form className="profileform">
                 <label> First Name: <input value={firstName} onChange={this.handleFirstName}/> </label>
                 <label> Last Name: <input value={lastName} onChange={this.handleLastName}/> </label>
@@ -58,6 +65,17 @@ class ProfileForm extends React.Component{
                     <label> <input type="radio" value="other" checked={gender==='other'} onChange={this.handleGender}/> Other </label>  
                 </label>
             </form>
+            <button onClick={()=>this.setState({show:true})}>Change</button>
+            {this.state.show && (
+                <>
+                    <p>{firstName}</p>
+                    <p>{lastName}</p>
+                    <p>{state}</p>
+                    <p>{married}</p>
+                    <p>{gender}</p>
+                </>
+            )}
+            </>
         )
     }
 }

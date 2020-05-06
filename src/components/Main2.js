@@ -6,6 +6,7 @@ import CatsInfo from './CatsInfo';
 import Price from './Price';
 import LogInForm from './LogInForm';
 import ProfileForm from './ProfileForm';
+import UserList from './UserList';
 
 
 class Main2 extends React.Component {
@@ -18,7 +19,8 @@ class Main2 extends React.Component {
             {/* <CatsInfo/> */}
             {/* <Price value={100} currency="USD"/> */}
             {/* <LogInForm/> */}
-            <ProfileForm/>
+            {/* <ProfileForm/> */}
+            <UserList/>
         </div>
     }
 }
