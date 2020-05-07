@@ -122,3 +122,23 @@ i {
 .frame{
     border: 1px dashed darkolivegreen;
 }
+.search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 20px;
+    position:relative;
+}
+.search input{
+    width: 250px;
+    height: 35px;
+    font-size: 20px;
+}
+.options{
+    border: 1px solid cornflowerblue;
+    position: absolute;
+    top:35px;
+    left:73px;
+    width: 250px;
+    background-color: white;
+}

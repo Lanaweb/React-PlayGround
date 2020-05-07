@@ -7,6 +7,7 @@ import Price from './Price';
 import LogInForm from './LogInForm';
 import ProfileForm from './ProfileForm';
 import UserList from './UserList';
+import Autocomplete from './Autocomplete';
 
 
 class Main2 extends React.Component {
@@ -20,7 +21,8 @@ class Main2 extends React.Component {
             {/* <Price value={100} currency="USD"/> */}
             {/* <LogInForm/> */}
             {/* <ProfileForm/> */}
-            <UserList/>
+            {/* <UserList/> */}
+            <Autocomplete/>
         </div>
     }
 }
