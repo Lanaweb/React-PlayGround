@@ -4,9 +4,7 @@
 h1{
     color:red;
 }
-p{
-    color: blue;
-}
+
 i {
     border: solid black;
     border-width: 0 6px 6px 0;
@@ -141,4 +139,11 @@ i {
     left:73px;
     width: 250px;
     background-color: white;
+}
+.options p{
+    margin:0;
+    padding: 10px;
+}
+.selected {
+    background-color: rgb(228, 226, 226);
 }

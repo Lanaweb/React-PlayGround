@@ -7,7 +7,9 @@ class Autocomplete extends React.Component {
         suggestions: [],
     }
 
-    arrayOfWords = ["cats", "california", "catering", "cigar"]
+    arrayOfWords = ["cats", "california", "catering", "cigar","you are a cat mom"]
+
+    optionsRef = React.createRef()
 
     getSuggestions = (input) => {
         let listSuggestions = [];
@@ -15,8 +17,13 @@ class Autocomplete extends React.Component {
             if (input.length === 0) {
                 return listSuggestions;
             }
-            if (word.includes(input)) {
-                listSuggestions.push(word)
+            // if (word.includes(input)) {
+            //     listSuggestions.push(word)
+            // }
+            let index = word.indexOf(input)
+            console.log(word,index);
+            if (index !== -1) {
+                listSuggestions.push([word, index, index+input.length])
             }
         }
         return listSuggestions;
@@ -30,13 +37,21 @@ class Autocomplete extends React.Component {
 
     }
 
+    handleKeyDown = (e) =>{
+        if(e.key==="ArrowDown"){
+            this.optionsRef.current.moveDown()
+        }
+        else if(e.key==="ArrowUp"){
+            this.optionsRef.current.moveUp()
+        }
+    }
 
 
     render() {
         return (
             <div className="search">
-                <label>Search: <input value={this.state.input} onChange={this.handleInput} type="text" /></label>
-                <SearchOptions options={this.state.suggestions} />
+                <label>Search: <input value={this.state.input} onChange={this.handleInput} type="text" onKeyDown={this.handleKeyDown} /></label>
+                <SearchOptions options={this.state.suggestions} ref={this.optionsRef}/>
             </div>
         )
     }
