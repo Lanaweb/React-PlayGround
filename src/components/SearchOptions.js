@@ -5,6 +5,12 @@ class SearchOptions extends React.Component {
         selected: null,
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.options !== prevProps.options) {
+          this.setState({selected:null});
+        }
+      }
+
     moveDown() {
         if (this.state.selected == null) {
             this.setState({ selected: 0 })
@@ -24,6 +30,12 @@ class SearchOptions extends React.Component {
         }
     }
 
+    handleClick=()=>{
+        let word=this.props.options[this.state.selected][0]
+        
+        this.props.changeInput(word)
+    }
+
 
     renderOneItem(option, i) {
         let [word, start, end] = option // ["tobecatmom", 4, 7]
@@ -33,7 +45,7 @@ class SearchOptions extends React.Component {
                 key={i}
                 className={suggestionClass}
                 onMouseOver={() => this.setState({ selected: i })}
-
+                onClick={this.handleClick}
             >
                 {word.slice(0, start)}
                 <b>{word.slice(start, end)}</b>

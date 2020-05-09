@@ -37,12 +37,29 @@ class Autocomplete extends React.Component {
 
     }
 
+    changeInput = (value) => {
+        this.setState({
+            input:value,
+            suggestions: [],
+        })
+
+    }
+
+
+
     handleKeyDown = (e) =>{
+        console.log(e.key)
         if(e.key==="ArrowDown"){
             this.optionsRef.current.moveDown()
         }
         else if(e.key==="ArrowUp"){
             this.optionsRef.current.moveUp()
+        }
+        else if(e.key==="Enter"){
+            this.optionsRef.current.handleClick();
+        }
+        else if(e.key==="Escape"){
+            this.setState({suggestions: []});
         }
     }
 
@@ -51,7 +68,11 @@ class Autocomplete extends React.Component {
         return (
             <div className="search">
                 <label>Search: <input value={this.state.input} onChange={this.handleInput} type="text" onKeyDown={this.handleKeyDown} /></label>
-                <SearchOptions options={this.state.suggestions} ref={this.optionsRef}/>
+                <SearchOptions 
+                    options={this.state.suggestions} 
+                    ref={this.optionsRef}
+                    changeInput={this.changeInput }
+                />
             </div>
         )
     }
